@@ -68,13 +68,18 @@
     let image = $("img#coffee-image"); 
     image.attr('src', 'static/coffee_beans.jpg');
 
-    function makeCoffee() {
+    let drinksOrdered = [];
+
+    function makeCoffee(drinkType) {
         image.attr('src', 'static/coffee_machine.jpg');
         setTimeout(function () {image.attr('src', 'static/coffee_mug.jpg'); }, 1500);
         setTimeout(function () {image.attr('src', 'static/coffee_beans.jpg'); }, 4000);
+
+        drinksOrdered.push(drinkType);
+        console.log(drinksOrdered);
     }
 
-    image.on('click', makeCoffee);
+    image.on('click', function () { makeCoffee("brew"); });
 
     let revenueMessage;
 
