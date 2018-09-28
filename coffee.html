@@ -77,6 +77,8 @@
 
         drinksOrdered.push(drinkType);
         console.log(drinksOrdered);
+
+        revenueMessage.html(revenue().toFixed(2));
     }
 
     image.on('click', function () { makeCoffee("brew"); });
@@ -87,10 +89,10 @@
 
     espresso.on('click', function () { makeCoffee("espresso"); });
     latte.on('click', function () { makeCoffee("latte"); });
-    cocoa.on('click', function () { makeCoffee("cocoa"); });
+    cocoa.on('click', function () { makeCoffee("hot chocolate"); });
 
 
-    let revenueMessage;
+    let revenueMessage = $("#revenue");
 
     // use this JavaScript object in further study step
 
@@ -100,6 +102,17 @@
         "latte": 4.15,
         "hot chocolate": 2.50
     };
+
+    function revenue() {
+        let total = 0; 
+
+        for (let drink of drinksOrdered){
+            let price = prices[drink];
+            total += price;
+        }
+        return total;
+        
+    }
 
 
 </script>
