@@ -81,9 +81,16 @@
 
     image.on('click', function () { makeCoffee("brew"); });
 
+    let espresso = $("#espresso");
+    let latte = $("#latte");
+    let cocoa = $("#hot-chocolate");
+
+    espresso.on('click', function () { makeCoffee("espresso"); });
+    latte.on('click', function () { makeCoffee("latte"); });
+    cocoa.on('click', function () { makeCoffee("cocoa"); });
+
+
     let revenueMessage;
-
-
 
     // use this JavaScript object in further study step
 
